@@ -1,0 +1,12 @@
+{
+    "gender" : "female",
+    "fName" : "FirstTestName",
+    "lName" : "LastTestName",
+    "DateInDOB" : "15",
+    "MonthInDOB" : "September",
+    "YearInDOB" : "1999",
+    "email" : "abctest@xyz.com",
+    "companyName" : "Google",
+    "newsletter" : "false",
+    "password" : "123456ui"
+}
