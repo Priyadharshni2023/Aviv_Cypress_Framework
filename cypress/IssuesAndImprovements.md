@@ -17,12 +17,12 @@ INSTALLATION:
 
 3. Install cypress: npm install cypress
 
-3. To Run Cypress tests:
+4. To Run Cypress tests:
 npx cypress open
 or
 npm test (for parallel runs in Electron, headless by defalut)
 
-4. Reports: 
+5. Reports: 
 MochaAwesome reports --> /reports/html/index.html
 
 ISSUES AND CHALLENGES:
