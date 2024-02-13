@@ -1,7 +1,7 @@
 {
   "name": "aviv_cypress_framework",
   "version": "1.0.0",
-  "description": "## Overview",
+  "description": "Data Driven Framework",
   "main": "index.js",
   "scripts": {
     "cypress:run": "cypress run --headless",

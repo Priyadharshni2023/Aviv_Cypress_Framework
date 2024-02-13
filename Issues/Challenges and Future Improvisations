@@ -2,10 +2,11 @@ Tools /Frameworks Used:
 
 1. Cypress with Mocha using javaScript
 2. MochaAwesome report
-3. npm-run-all
+3. Parallel Execution : npm-run-all
 4. Automation design: POM with Data Driven
 5. GitHub Actions
-6. 
+6. Parameterized tests for Scenario_2
+7. Used env variables
 
 Pre-requisites:
 
@@ -43,6 +44,7 @@ IMPROVEMENTS:
 2. Introducing a master custom library of common actions and workflow
 3. A simple git actions workflow hhas been added but it can be enhanced for more actions in future
 4. Logging scripts can be added for better understanding of the flow.
+
 
 
  
