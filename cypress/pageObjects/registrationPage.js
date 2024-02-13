@@ -15,7 +15,8 @@ class registrationPage{
          passwordField : () => cy.get('#Password'),
          confirmpasswordField : () => cy.get('#ConfirmPassword'),
          registerButton : () => cy.get('#register-button'),
-         successMessage : () => cy.get('.result')
+         successMessage : () => cy.get('.result'),
+         errorMessage : () => cy.get('.message-error.validation-summary-errors')
      }
 
      
@@ -48,6 +49,10 @@ class registrationPage{
      clickOnRegisterButton(){
         this.elements.registerButton().click();
          this.elements.successMessage().should('be.visible')
+     }
+     clickOnRegisterButtonForInvalidData(){
+        this.elements.registerButton().click();
+         this.elements.errorMessage().should('be.visible')
      }
 
 
