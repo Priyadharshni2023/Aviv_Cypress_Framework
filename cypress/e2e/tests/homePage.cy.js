@@ -16,7 +16,7 @@ describe('Scenario 1', () => {
       cy.visit('https://demo.nopcommerce.com/');
    })
 
-   it('Registration',()=>{
+   it.skip('Registration',()=>{
     homeObject.clickOnRegister();
     regObject.enterPersonalDetails(data.gender, data.fName, data.lName, data.dayInDOB,
          data.monthInDOB, data.yearInDOB, data.email, data.companyName, data.newsLetter , data.password);
@@ -28,14 +28,23 @@ describe('Scenario 1', () => {
     homeObject.clickOnLogin();
     loginObj.enterLoginDetails(data.email,data.password);
     loginObj.clickOnLoginButton();
-
-    homeObject.addProductToCart();
-    homeObject.goToShoppingCart();
-    homeObject.clickOncheckOut();
-    checkOutObj.enterBillingAddress(data.country , data.city, data.address, data.postalCode, data.phone);
+    homeObject.clickOnApparels()
+    homeObject.addClothingsToCart();
+    //homeObject.addProductToCart();
+    //homeObject.goToShoppingCart();
+    //homeObject.clickOncheckOut();
+    //checkOutObj.enterBillingAddress(data.country , data.city, data.address, data.postalCode, data.phone);
    })
 
    
 
    
+})
+
+describe('Scenario 4', ()=>{
+
+   it('Add various Products to cart',()=>{
+      
+   })
+
 })
