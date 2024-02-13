@@ -17,5 +17,10 @@
 import './commands'
 import 'cypress-mochawesome-reporter/register';
 
-// Alternatively you can use CommonJS syntax:
-// require('./commands')
+
+beforeEach(function () {
+    const randomId = Cypress._.random(9000000);
+    const jsonData = randomId + "@gmail.com";
+    cy.wrap(jsonData).as('email')
+    cy.visit('https://demo.nopcommerce.com/');
+});

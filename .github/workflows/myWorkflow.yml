@@ -3,10 +3,10 @@ name: Cypress Tests
 on:
   push:
     branches:
-      - main  # Adjust to your main branch name
+      - main  
   pull_request:
     branches:
-      - main  # Adjust to your main branch name
+      - main  
 
 jobs:
   cypress-tests:
@@ -20,4 +20,4 @@ jobs:
         run: npm install
 
       - name: Run Cypress tests
-        run: npm run cy:run
+        run: npx cypress run

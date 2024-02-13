@@ -16,10 +16,13 @@ class registrationPage{
          confirmpasswordField : () => cy.get('#ConfirmPassword'),
          registerButton : () => cy.get('#register-button'),
          successMessage : () => cy.get('.result'),
-         errorMessage : () => cy.get('.message-error.validation-summary-errors')
-     }
+         errorMessage : () => cy.get('.message-error.validation-summary-errors'),
+         fNameErrorMessage : () => cy.get('#FirstName-error'),
+         lNameErrorMessage : () => cy.get('#LastName-error'),
+         emailErrorMessage : () => cy.get('#Email-error'),
+         passwordErrorMessage : () => cy.get('#Password-error'),
 
-     
+     }
 
      enterPersonalDetails(gender, fName, lName, dayInDOB, monthInDOB, yearInDOB, email, companyName, newsLetter , password){
         if(gender=="Male"){
@@ -50,10 +53,20 @@ class registrationPage{
         this.elements.registerButton().click();
          this.elements.successMessage().should('be.visible')
      }
+
+     enterInvalidRegistrationDetails(email, password){
+        this.elements.emailTextButton().type(email);
+        this.elements.passwordField().type(password);
+        this.elements.confirmpasswordField().type(password);
+     }
      clickOnRegisterButtonForInvalidData(){
         this.elements.registerButton().click();
-         this.elements.errorMessage().should('be.visible')
+         this.elements.fNameErrorMessage().should('be.visible')
+         this.elements.lNameErrorMessage().should('be.visible')
+         this.elements.emailErrorMessage().should('be.visible')
+         this.elements.passwordErrorMessage().should('be.visible')
      }
+    
 
 
   }
