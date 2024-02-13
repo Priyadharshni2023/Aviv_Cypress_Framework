@@ -1,8 +1,8 @@
 import homePage from '../../pageObjects/homePage'
 import loginPage from '../../pageObjects/loginPage'
 import registrationPage from '../../pageObjects/registrationPage';
-import data from '/Users/freshworks/Desktop/EComm/Aviv_Cypress_Framework/cypress/fixtures/homePageData.json'
-import emailData from '/Users/freshworks/Desktop/EComm/Aviv_Cypress_Framework/cypress/fixtures/randomEmail.json'
+import data from "../../fixtures/homePageData.json"
+import emailData from "../../fixtures/randomEmail.json"
 import productDetailsPage from '../../pageObjects/productDetailsPage';
 import shoppingCartPage from '../../pageObjects/shoppingCartPage';
 
@@ -44,7 +44,6 @@ describe('Scenario 1: User Signup and Checkout', () => {
       productDetailsObj.addProductToCart();
       homeObject.goToShoppingCart();
       shoppingCartObj.removeItemsFromCart();
-      
    })
 
 

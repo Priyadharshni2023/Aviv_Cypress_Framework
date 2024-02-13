@@ -1,5 +1,5 @@
 
-[
+
     {
     "gender": "Female",
     "fName": "TestFname",
@@ -15,13 +15,6 @@
     "city": "New York",
     "address": "32, xyt street",
     "postalCode": "23444",
-    "phone": "6780987",
-    "invalidEmail": "%^*",
-    "invalidPassword": "###"
-},
-
-{
-    "invalidEmail": "%23",
-    "invalidPassword": "##-"  
+    "phone": "6780987"
+    
 }
-]

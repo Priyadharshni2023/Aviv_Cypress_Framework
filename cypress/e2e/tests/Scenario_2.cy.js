@@ -8,7 +8,7 @@ const regObject = new registrationPage();
 
 describe('Scenario 2: Invalid Signup Attempt', ()=>
 {   
-   const testData = require('/Users/freshworks/Desktop/EComm/Aviv_Cypress_Framework/cypress/fixtures/homePageData.json');
+   const testData = require("../../fixtures/invalidData.json");
    testData.forEach((data) => {
     it('Invalid Registration',()=>{
       homeObject.clickOnRegister();
