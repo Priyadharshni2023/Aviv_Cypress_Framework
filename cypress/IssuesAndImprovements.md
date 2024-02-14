@@ -27,19 +27,23 @@ MochaAwesome reports --> /reports/html/index.html
 
 ISSUES AND CHALLENGES:
 
- 1. The Login credentials that is generated becomes invalid after sometime, This was an time consuming process while running the tests multiple times. 
+1. Remove items from cart has so many loaders/spinners and whole page loads for each item removal which was disrupting the over all flow
+      Resolve: Added cy.intercept for all the APIs to load fully and added waits until spinners dissappear and element appear
+      
+ 2. The Login credentials that is generated becomes invalid after sometime, This was an time consuming process while running the tests multiple times. 
 
     Resolve: Had to Register everytime the script was run
 
- 2. Flaky Tests: I am not sure why but sometimes some errors would show up and the tests would fail because the website was down and work perfectly the next time.
+ 3. Flaky Tests: I am not sure why but sometimes some errors would show up and the tests would fail because the website was down and work perfectly the next time.
 
- 3. Add elements to cart functionality was flaky: the shopping cart would should shouw different quantities tiime to time.
+ 4. Add elements to cart functionality was flaky: the shopping cart would should shouw different quantities tiime to time.
 
     Resolve: Had Explicit waits for spinners and elements to be visible
 
- 4. State or Province is not a mandatory field for United states yet throwing error while US is selected.
+ 5. State or Province is not a mandatory field for United states yet throwing error while US is selected.
 
     Resolve: This may be a Bug but any ways added a flow for the US
+
 
 IMPROVEMENTS:
 
