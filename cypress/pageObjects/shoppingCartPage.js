@@ -21,8 +21,10 @@ class shoppingCartPage {
       productInfo: () => cy.get('div.details > h2 > a'),
       addToCartButton: () => cy.get('.buttons > .product-box-add-to-cart-button'),
       cartQuantity: () => cy.get('#topcartlink .cart-qty'),
-      removeFromCart: () => cy.get(".remove-btn"),
-      appSpinner: () => cy.get(".ajax-loading-block-window")
+      removeFromCart: () => cy.get(".remove-btn", { timeout: 5000 }),
+      appSpinner: () => cy.get(".ajax-loading-block-window"),
+      assert1 : ()=> cy.xpath("(//td[@class='product']/a)[1]"),
+      assert2 : ()=> cy.xpath("(//td[@class='product']/a)[2]")
    }
 
    verifyCartQuantity(quantity) {
@@ -54,16 +56,29 @@ class shoppingCartPage {
       this.elements.successMessage().should('exist')
    }
 
-   removeItemsFromCart(){
-         this.elements.removeFromCart().each($el => {
-            cy.wrap($el).scrollIntoView().click({ force: true });
-            this.elements.appSpinner().should('not.be.visible')
-      });
-
+   removeItemsFromCart() {
+      cy.intercept('POST', '/cart/estimateshipping?CountryId=1&StateProvinceId=52&ZipPostalCode=23444&City=').as('apiCall');
+      cy.intercept('POST', '/shoppingcart/checkoutattributechange?isEditable=True').as('apiCall2');
+      cy.wait('@apiCall').then(() => {
+         cy.wait('@apiCall2').then(() => {
+            cy.get('@beatsSpeaker').then((val) => {
+               this.elements.assert1().invoke('text').should('eq', val);
+            })
+            cy.get('@portableSpeaker').then((val) => {
+               this.elements.assert2().invoke('text').should('eq', val);
+            })
+            this.elements.removeFromCart().then($element => {
+               const numberOfElements = $element.length;
+               for (let i = 0; i < numberOfElements; i++) {
+                  this.elements.appSpinner().should('not.be.visible');
+                  this.elements.removeFromCart().eq(i).should('be.visible').trigger('click', { force: true });
+                  this.elements.appSpinner().should('not.be.visible');
+               }
+            });
+         })
+      })
+      this.verifyCartQuantity(0)
    }
-
-
-
 }
 
 export default shoppingCartPage;
