@@ -1,23 +1,14 @@
-# AVIV QA Web Technical Test
 
-## Overview
 
-Welcome to the Aviv QA Web Technical Test! This challenge involves automating test scenarios for the [demo.nopcommerce.com](https://demo.nopcommerce.com/) website using your preferred programming language (TypeScript, JavaScript, Java, Python, or .NET) and your preferred test automation framework or library (Playwright, WebdriverIO, Cypress, TestCafe, or Selenium Webdriver). 
 
-The focus is on implementing automation tests following the Page Object Model (POM) and Data-Driven Testing (DDT) principles for better maintainability and readability.
+Tool/Framework used:
 
-## Getting Started
-
-1. Read and comprehend the test automation challenge requirements provided in this repository.
-2. Fork the original repository to your GitHub account to submit pull requests.
-3. Create a New Branch to work on your changes.
-4. Implement test automation according to the challenge requirements. Follow best practices for writing clear, maintainable, and efficient code.
-5. Commit your changes with clear and concise commit messages representing logical steps in your development process.
-6. Push your branch to your forked repository on GitHub.
-7. Navigate to your forked repository on GitHub and create a new pull request from your feature branch to the original repository's main branch.
-8. In the PR description, explain the changes made, the approach taken, and any challenges faced. Be clear and concise.
-
-## The Challenge
+1.POM 
+2. MOCHA
+3. Git workflow
+4. Parameterized tests
+5. Prallel tests
+6. mochawesome reports
 
 ### Test Scenarios
 
@@ -68,30 +59,16 @@ The focus is on implementing automation tests following the Page Object Model (P
 
 ### Continuous Integration
 
-- The project should be integrated with (CircleCI, GitLab, Jenkins, or GitHub Actions) for continuous integration.
-- The automation suite is triggered on each push or pull request to the repository.
+ GitHub Actions
 
 ### Test Reports
 
-- Test reports should be generated after each test run and can be found in the `/reports` directory.
+- Test reports can be found in the `/reports` directory.
 
-### Issues and Challenges
 
-- Document any challenges faced during the automation process and how they were addressed.
+Additional features:
 
-### Future Improvements
-
-- Highlight any improvements or optimizations considered for future iterations.
-
-### Bonus Points
-
-- You can earn bonus points for:
   - Implementing parameterized tests.
   - Using environmental configurations.
   - Demonstrating knowledge of parallel test execution.
 
-## Good luck!
-
-Best regards, 
-
-Aviv Quality Team
